@@ -21,6 +21,7 @@ class m190707_172317_author_add_column_date_of_birth extends Migration
      */
     public function safeDown()
     {
+        $this->dropColumn('author', 'date_of_birth');
         echo "m190707_172317_author_add_column_date_of_birth has been reverted.\n";
 
         return false;

@@ -3,16 +3,17 @@
 use yii\db\Migration;
 
 /**
- * Class m190707_173432_book_add_index_title
+ * Class m190708_103741_book_change_index_title
  */
-class m190707_173432_book_add_index_title extends Migration
+class m190708_103741_book_change_index_title extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createIndex('book_i_title_n_u', 'book', 'title', false);
+        $this->dropIndex('book_i_title_n_u', 'book');
+        $this->createIndex('book_i_title_n_u', 'book', 'title', true);
     }
 
     /**
@@ -21,7 +22,7 @@ class m190707_173432_book_add_index_title extends Migration
     public function safeDown()
     {
         $this->dropIndex('book_i_title_n_u', 'book');
-        echo "m190707_173432_book_add_index_title has been reverted.\n";
+        echo "m190708_103741_book_change_index_title has been reverted.\n";
 
         return false;
     }
@@ -35,7 +36,7 @@ class m190707_173432_book_add_index_title extends Migration
 
     public function down()
     {
-        echo "m190707_173432_book_add_index_title cannot be reverted.\n";
+        echo "m190708_103741_book_change_index_title cannot be reverted.\n";
 
         return false;
     }

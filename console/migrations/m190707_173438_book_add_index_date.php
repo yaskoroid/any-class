@@ -20,6 +20,7 @@ class m190707_173438_book_add_index_date extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('book_i_date_n_u', 'book');
         echo "m190707_173438_book_add_index_date has been reverted.\n";
 
         return false;

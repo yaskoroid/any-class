@@ -20,6 +20,7 @@ class m190707_173516_author_add_index_date_of_birth extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('author_i_date_of_birth_n_u', 'author');
         echo "m190707_173516_author_add_index_date_of_birth has been reverted.\n";
 
         return false;

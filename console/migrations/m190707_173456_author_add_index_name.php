@@ -20,6 +20,7 @@ class m190707_173456_author_add_index_name extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex('author_i_name_n_u', 'author');
         echo "m190707_173456_author_add_index_name has been reverted.\n";
 
         return false;
